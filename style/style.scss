@@ -1,0 +1,27 @@
+---
+---
+
+$sidetray: #4F4F4F;
+
+.dashboard {
+    overflow: hidden;
+    height: 100%;
+    background: #ffffff;
+
+    .menu-bar {
+    }
+}
+
+.sidetray {
+    float: left;
+    width: 250px;
+    height: 100%;
+    background: $sidetray;
+}
+
+.menu-bar {
+	width: 100%;
+	top: 0px;
+	height: 80px;
+	background: #C9C9C9;
+}

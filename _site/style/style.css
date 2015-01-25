@@ -1,0 +1,16 @@
+.dashboard {
+  overflow: hidden;
+  height: 100%;
+  background: #ffffff; }
+
+.sidetray {
+  float: left;
+  width: 250px;
+  height: 100%;
+  background: #4F4F4F; }
+
+.menu-bar {
+  width: 100%;
+  top: 0px;
+  height: 80px;
+  background: #C9C9C9; }

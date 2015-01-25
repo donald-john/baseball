@@ -1,8 +1,34 @@
 <html>
 	<head>
 		<title>Baseball</title>
+
+		<!-- styles -->
+		<link rel="stylesheet" type="text/css" href="style/reset.css">
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.css">
+
+		<!-- scripts -->
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+
+		<script type="text/javascript" src="js/controllers/appController.js"></script>
+		<script type="text/javascript" src="js/controllers/dashboardController.js"></script>
+		<script type="text/javascript" src="js/directives/dashboardDirectives.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<base href="/"/>
 	</head>
-	<body>
-		baseball
+	<body ng-app="baseball">
+		<div class="main-container" ng-controller="AppController">
+			<div class="dashboard-wrapper">
+				<div class="sidetray"></div>
+				<div class="dashboard">
+					<div class="menu-bar">
+						<a menu-transform href="#"><i class="fa fa-bars"></i></a>
+					</div>
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
