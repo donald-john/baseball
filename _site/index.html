@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="style/reset.css">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.css">
+		<link href='http://fonts.googleapis.com/css?family=Permanent+Marker|PT+Sans+Caption' rel='stylesheet' type='text/css'>
 
 		<!-- scripts -->
 		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
@@ -16,16 +17,15 @@
 		<script type="text/javascript" src="js/controllers/dashboardController.js"></script>
 		<script type="text/javascript" src="js/directives/dashboardDirectives.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
-		<base href="/baseball/">
+		<!-- <base href="/baseball/"> -->
+		<base href="/">
 	</head>
 	<body ng-app="baseball">
 		<div class="main-container" ng-controller="AppController">
 			<div class="dashboard-wrapper">
-				<div class="sidetray"></div>
+				<div ng-include="'partials/sidetray.html'"></div>
 				<div class="dashboard">
-					<div class="menu-bar">
-						<a menu-transform href="#"><i class="fa fa-bars"></i></a>
-					</div>
+					<div ng-include="'partials/header.html'"></div>
 					<div ng-view></div>
 				</div>
 			</div>
