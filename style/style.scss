@@ -1,0 +1,152 @@
+---
+---
+
+$sidetray: #424242;
+$dashboard: #EAEAEA;
+$menu-bar: #FCFCFC;
+$orioles: #E38C00;
+$iconBlack: #3C3C3C;
+$logoBlack: #3C3C3C;
+
+
+#spinner {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	img {
+		margin-left: 50%;
+		margin-top: 50%;
+	}
+}
+
+
+.dashboard {
+    overflow: hidden;
+    height: 100%;
+    background: $dashboard;
+
+    .menu-bar {
+    	width: 100%;
+		top: 0px;
+		height: 50px;
+		background: $menu-bar;
+    	border-bottom: #949494 solid 1px;
+    	padding:15px;
+
+    	.header-button {
+    		display: block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			text-align: center;
+			color: #000000;
+			float: left;
+
+			i {
+				margin-top: 9px;
+			}
+    	}
+		.header-button:hover {
+    		color: $orioles;
+    	}
+
+    	.side-bar-button {
+    		color: #C2C2C2;
+    	}
+
+    	
+
+    	.tool-box {
+    		width: 300px;
+			height: 100%;
+			float: right;
+			margin-right: 30px;
+
+			a {
+				font-size: 20px;
+				float: right;
+				color: $iconBlack;
+				i {
+					margin-top: 14px;
+				}
+			}
+    	}
+    }
+}
+
+.sidetray {
+    float: left;
+    width: 250px;
+    height: 100%;
+    background: $sidetray;
+    border-right: #444444 solid 2px;
+
+    .logo-wrapper{
+    	display: inline-block;
+		width: 100%;
+    	background: $logoBlack;
+    	font-family: PT Sans Caption;
+    	color: #ffffff;
+    	border-bottom: #5A5A5A solid 1px;
+
+    	.logo{
+    		height: 80px;
+			width: 80px;
+			float: left;
+
+			img {
+				width: 65px;
+				padding: 7px;
+			}
+
+			@media screen and (max-width: 977px) {
+		    	.logo {
+		    		width: 60px;
+		    	}
+
+		    	img {
+		    		width: 50px;
+					padding: 6px;
+					margin-top: 8px;
+		    	}
+		    }
+    	}
+
+    	.title {
+    		font-size: 29px;
+			font-family: PT Sans Caption;
+			padding: 24px;
+			float: left;
+
+			@media screen and (max-width: 977px) {
+	    		.title {
+	    			display: none;
+	    		}
+		    }
+    	}
+    }
+
+    @media screen and (max-width: 977px) {
+    	width: 60px;
+    	.logo-wrapper {
+    		.title {
+    			display: none;
+    		}
+
+	    	.logo {
+	    		width: 60px;
+	    	}
+	    }
+    }
+
+    @media screen and (max-width: 768px) {
+    	display: none;
+    }
+}
+
+// https://www.google.com/fonts#ChoosePlace:select/Collection:Permanent+Marker|PT+Sans+Caption
+
+// 768
+//977
+// 1000

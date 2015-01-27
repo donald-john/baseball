@@ -1,0 +1,179 @@
+<h3 id="prototype-methods">Prototype methods</h3>
+
+<p>For each chart, there are a set of global prototype methods on the shared <code>ChartType</code> which you may find useful. These are available on all charts created with Chart.js, but for the examples, let’s use a line chart we’ve made.</p>
+
+<p><code>javascript
+// For example:
+var myLineChart = new Chart(ctx).Line(data);
+</code></p>
+
+<h4 id="clear">.clear()</h4>
+
+<p>Will clear the chart canvas. Used extensively internally between animation frames, but you might find it useful.</p>
+
+<p><code>javascript
+// Will clear the canvas that myLineChart is drawn on
+myLineChart.clear();
+// =&gt; returns 'this' for chainability
+</code></p>
+
+<h4 id="stop">.stop()</h4>
+
+<p>Use this to stop any current animation loop. This will pause the chart during any current animation frame. Call <code>.render()</code> to re-animate.</p>
+
+<p><code>javascript
+// Stops the charts animation loop at its current frame
+myLineChart.stop();
+// =&gt; returns 'this' for chainability
+</code></p>
+
+<h4 id="resize">.resize()</h4>
+
+<p>Use this to manually resize the canvas element. This is run each time the browser is resized, but you can call this method manually if you change the size of the canvas nodes container element.</p>
+
+<p><code>javascript
+// Resizes &amp; redraws to fill its container element
+myLineChart.resize();
+// =&gt; returns 'this' for chainability
+</code></p>
+
+<h4 id="destroy">.destroy()</h4>
+
+<p>Use this to destroy any chart instances that are created. This will clean up any references stored to the chart object within Chart.js, along with any associated event listeners attached by Chart.js.</p>
+
+<p><code>javascript
+// Destroys a specific chart instance
+myLineChart.destroy();
+</code></p>
+
+<h4 id="tobase64image">.toBase64Image()</h4>
+
+<p>This returns a base 64 encoded string of the chart in it’s current state.</p>
+
+<p><code>javascript
+myLineChart.toBase64Image();
+// =&gt; returns png data url of the image on the canvas
+</code></p>
+
+<h4 id="generatelegend">.generateLegend()</h4>
+
+<p>Returns an HTML string of a legend for that chart. The template for this legend is at <code>legendTemplate</code> in the chart options.</p>
+
+<p><code>javascript
+myLineChart.generateLegend();
+// =&gt; returns HTML string of a legend for this chart
+</code></p>
+
+<h3 id="external-tooltips">External Tooltips</h3>
+
+<p>You can enable custom tooltips in the global or chart configuration like so:</p>
+
+<p>```javascript
+var myPieChart = new Chart(ctx).Pie(data, {
+	customTooltips: function(tooltip) {</p>
+
+<pre><code>    // tooltip will be false if tooltip is not visible or should be hidden
+    if (!tooltip) {
+        return;
+    }
+
+    // Otherwise, tooltip will be an object with all tooltip properties like:
+
+    // tooltip.caretHeight
+    // tooltip.caretPadding
+    // tooltip.chart
+    // tooltip.cornerRadius
+    // tooltip.fillColor
+    // tooltip.font...
+    // tooltip.text
+    // tooltip.x
+    // tooltip.y
+    // etc...
+
+}; }); ```
+</code></pre>
+
+<p>See files <code>sample/pie-customTooltips.html</code> and <code>sample/line-customTooltips.html</code> for examples on how to get started.</p>
+
+<h3 id="writing-new-chart-types">Writing new chart types</h3>
+
+<p>Chart.js 1.0 has been rewritten to provide a platform for developers to create their own custom chart types, and be able to share and utilise them through the Chart.js API.</p>
+
+<p>The format is relatively simple, there are a set of utility helper methods under <code>Chart.helpers</code>, including things such as looping over collections, requesting animation frames, and easing equations.</p>
+
+<p>On top of this, there are also some simple base classes of Chart elements, these all extend from <code>Chart.Element</code>, and include things such as points, bars and scales.</p>
+
+<p>```javascript
+Chart.Type.extend({
+	// Passing in a name registers this chart in the Chart namespace
+	name: “Scatter”,
+	// Providing a defaults will also register the deafults in the chart namespace
+	defaults : {
+		options: “Here”,
+		available: “at this.options”
+	},
+	// Initialize is fired when the chart is initialized - Data is passed in as a parameter
+	// Config is automatically merged by the core of Chart.js, and is available at this.options
+	initialize:  function(data){
+		this.chart.ctx // The drawing context for this chart
+		this.chart.canvas // the canvas node for this chart
+	},
+	// Used to draw something on the canvas
+	draw: function() {
+	}
+});</p>
+
+<p>// Now we can create a new instance of our chart, using the Chart.js API
+new Chart(ctx).Scatter(data);
+// initialize is now run
+```</p>
+
+<h3 id="extending-existing-chart-types">Extending existing chart types</h3>
+
+<p>We can also extend existing chart types, and expose them to the API in the same way. Let’s say for example, we might want to run some more code when we initialize every Line chart.</p>
+
+<p>```javascript
+// Notice now we’re extending the particular Line chart type, rather than the base class.
+Chart.types.Line.extend({
+	// Passing in a name registers this chart in the Chart namespace in the same way
+	name: “LineAlt”,
+	initialize: function(data){
+		console.log(‘My Line chart extension’);
+		Chart.types.Line.prototype.initialize.apply(this, arguments);
+	}
+});</p>
+
+<p>// Creates a line chart in the same way
+new Chart(ctx).LineAlt(data);
+// but this logs ‘My Line chart extension’ in the console.
+```</p>
+
+<h3 id="community-extensions">Community extensions</h3>
+
+<ul>
+  <li>&lt;a href=”https://github.com/Regaddi/Chart.StackedBar.js” target”_blank”&gt;Stacked Bar Chart&lt;/a&gt; by <a href="https://twitter.com/Regaddi" target="_blank">@Regaddi</a></li>
+  <li>&lt;a href=”https://github.com/CAYdenberg/Chart.js” target”_blank”&gt;Error bars (bar and line charts)&lt;/a&gt; by <a href="https://twitter.com/CAYdenberg" target="_blank">@CAYdenberg</a></li>
+</ul>
+
+<h3 id="creating-custom-builds">Creating custom builds</h3>
+
+<p>Chart.js uses <a href="http://gulpjs.com/" target="_blank">gulp</a> to build the library into a single JavaScript file. We can use this same build script with custom parameters in order to build a custom version.</p>
+
+<p>Firstly, we need to ensure development dependencies are installed. With node and npm installed, after cloning the Chart.js repo to a local directory, and navigating to that directory in the command line, we can run the following:</p>
+
+<p><code>bash
+npm install
+npm install -g gulp
+</code></p>
+
+<p>This will install the local development dependencies for Chart.js, along with a CLI for the JavaScript task runner <a href="http://gulpjs.com/" target="_blank">gulp</a>.</p>
+
+<p>Now, we can run the <code>gulp build</code> task, and pass in a comma seperated list of types as an argument to build a custom version of Chart.js with only specified chart types.</p>
+
+<p>Here we will create a version of Chart.js with only Line, Radar and Bar charts included:</p>
+
+<p><code>bash
+gulp build --types=Line,Radar,Bar
+</code></p>
+
+<p>This will output to the <code>/custom</code> directory, and write two files, Chart.js, and Chart.min.js with only those chart types included.</p>
