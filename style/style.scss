@@ -6,6 +6,7 @@ $dashboard: #EAEAEA;
 $menu-bar: #FCFCFC;
 $orioles: #E38C00;
 $iconBlack: #3C3C3C;
+$logoBlack: #3C3C3C;
 
 
 #spinner {
@@ -84,7 +85,7 @@ $iconBlack: #3C3C3C;
     .logo-wrapper{
     	display: inline-block;
 		width: 100%;
-    	background: $iconBlack;
+    	background: $logoBlack;
     	font-family: PT Sans Caption;
     	color: #ffffff;
     	border-bottom: #5A5A5A solid 1px;
