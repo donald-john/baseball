@@ -1,0 +1,114 @@
+// sidetray styling
+
+.sidetray {
+    float: left;
+    width: 250px;
+    height: 100%;
+    background: $sidetray;
+    border-right: #444444 solid 2px;
+
+    .logo-wrapper{
+    	display: inline-block;
+		width: 100%;
+		position: absolute;
+		width: $sidetray-width;
+    	font-family: Open Sans;
+    	background: #424242;
+		z-index: 1;
+
+    	.logo{
+    		height: 80px;
+			width: 80px;
+			float: left;
+
+			img {
+				width: 65px;
+				padding: 7px;
+			}
+
+			@media screen and (max-width: 977px) {
+		    	.logo {
+		    		width: 60px;
+		    	}
+
+		    	img {
+		    		width: 50px;
+					padding: 6px;
+					margin-top: 8px;
+		    	}
+		    }
+    	}
+
+    	.title {
+    		font-size: 29px;
+			font-family: PT Sans Caption;
+			padding: 20px;
+			float: left;
+
+			@media screen and (max-width: 977px) {
+	    		.title {
+	    			display: none;
+	    		}
+		    }
+    	}
+    }
+
+
+    .menu-wrapper {
+    	height: 100%;
+    	position: absolute;
+		width: $sidetray-width;
+		overflow-y: scroll;
+
+		.menu {
+			margin-top: 80px;
+	    	.menu-section {
+	    		h3 {
+	    			padding: 11px;
+					font-size: 17px;
+					margin-left: 15px
+	    		}
+	    		.menu-option {
+		    		width: 100%;
+					height: 47px;
+					margin: 1px;
+
+					a {
+						text-decoration: none;
+						color: #ffffff;
+						height: 100%;
+						width: 100%;
+						display: block;
+
+						h4 {
+							padding: 15px;
+							margin-left: 35px;
+						}
+					}
+
+					a:hover{
+						background: #3A3A3A;
+					}
+		    	}
+	    	}
+	    }
+    }
+
+
+    @media screen and (max-width: 977px) {
+    	width: 60px;
+    	.logo-wrapper {
+    		.title {
+    			display: none;
+    		}
+
+	    	.logo {
+	    		width: 60px;
+	    	}
+	    }
+    }
+
+    @media screen and (max-width: 768px) {
+    	display: none;
+    }
+}
