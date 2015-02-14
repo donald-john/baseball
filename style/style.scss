@@ -51,9 +51,15 @@ body {
 			text-align: center;
 			color: #000000;
 			float: left;
+			text-decoration: none;
+			padding: 15px;
 
 			i {
-				margin-top: 9px;
+				font-size: 20px;
+			}
+
+			.tools {
+				font-size: 20px;
 			}
     	}
 		.header-button:hover {
@@ -64,7 +70,11 @@ body {
     		color: #C2C2C2;
     	}
 
-    	
+    	.tool-box {
+    		@media screen and (max-width: 550px) {
+    			display: none;
+		    }
+    	}
 
     	.tool-box,.profile-box {
     		width: 300px;
@@ -80,6 +90,8 @@ body {
 					margin-top: 14px;
 				}
 			}
+
+
     	}
 
     	.profile-box {
@@ -87,21 +99,78 @@ body {
     		background: green;
 
     		.btn-group {
-    			width: 100px;
+    			width: 130px;
 				height: 50px;
 
 				button {
-					width: 75px;
+					width: 105px;
 					height: 49px;
 					border-radius: 0px;
+					background: #FCFCFC;
+					color: #848484;
+					border: 0px;
+					// pesky bootstrap input glow
+					outline: none;
+					-webkit-box-shadow: none !important;
+					-moz-box-shadow: none !important;
+					box-shadow: none !important;
+					padding: 0px;
+
+					.profile-pic {
+						float: left;
+
+						img {
+							width: 30px;
+						}
+					}
+
+					.username {
+						float: left;
+						height: 30px;
+						padding: 5px;
+						width: 74px;
+					}
+				}
+
+				button:hover {
+					z-index: 0;
 				}
 
 				.dropdown-toggle {
 					width: 26px;
+					border-left: #D7D7D7 solid 1px;
+					-webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.125);
+					box-shadow: inset 0 0px 0px rgba(0,0,0,.125);
 				}
 
 				.dropdown-menu {
-					left: -125px;
+					left: -36px;
+					top: 62px;
+					border-radius: 0px;
+
+					li {
+						width: 100%;
+						height: 30px;
+
+						a {
+							font-family: 'Open Sans',sans-serif;
+							color: #000000;
+							font-size: 14px;
+							display: block;
+							width: 100%;
+							height: 100%;
+						}
+
+						a:hover {
+
+						}
+					}
+
+					.divider {
+						width: 100%;
+						height: 1px;
+						margin: 2px;
+					}
 				}
     		}
     	}

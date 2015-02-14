@@ -62,23 +62,15 @@ table {
       width: 80px;
       float: left; }
       .sidetray .logo-wrapper .logo img {
-        width: 65px;
+        width: 80px;
         padding: 7px; }
-      @media screen and (max-width: 977px) {
-        .sidetray .logo-wrapper .logo .logo {
-          width: 60px; }
-        .sidetray .logo-wrapper .logo img {
-          width: 50px;
-          padding: 6px;
-          margin-top: 8px; } }
     .sidetray .logo-wrapper .title {
       font-size: 29px;
       font-family: PT Sans Caption;
-      padding: 20px;
       float: left; }
-      @media screen and (max-width: 977px) {
-        .sidetray .logo-wrapper .title .title {
-          display: none; } }
+      .sidetray .logo-wrapper .title img {
+        width: 156px;
+        padding: 11px; }
   .sidetray .menu-wrapper {
     height: 100%;
     position: absolute;
@@ -180,11 +172,6 @@ table {
       display: none; }
     .sidetray .menu-wrapper .collapsed .section-wrapper a .section-title {
       display: none; }
-  @media screen and (max-width: 977px) {
-    .sidetray .logo-wrapper .title {
-      display: none; }
-    .sidetray .logo-wrapper .logo {
-      width: 60px; } }
   @media screen and (max-width: 768px) {
     .sidetray {
       display: none; } }
@@ -221,13 +208,20 @@ body {
       font-size: 30px;
       text-align: center;
       color: #000000;
-      float: left; }
+      float: left;
+      text-decoration: none;
+      padding: 15px; }
       .dashboard .menu-bar .header-button i {
-        margin-top: 9px; }
+        font-size: 20px; }
+      .dashboard .menu-bar .header-button .tools {
+        font-size: 20px; }
     .dashboard .menu-bar .header-button:hover {
       color: #E38C00; }
     .dashboard .menu-bar .side-bar-button {
       color: #C2C2C2; }
+    @media screen and (max-width: 550px) {
+      .dashboard .menu-bar .tool-box {
+        display: none; } }
     .dashboard .menu-bar .tool-box, .dashboard .menu-bar .profile-box {
       width: 300px;
       height: 100%;
@@ -243,13 +237,51 @@ body {
       width: 100px;
       background: green; }
       .dashboard .menu-bar .profile-box .btn-group {
-        width: 100px;
+        width: 130px;
         height: 50px; }
         .dashboard .menu-bar .profile-box .btn-group button {
-          width: 75px;
+          width: 105px;
           height: 49px;
-          border-radius: 0px; }
+          border-radius: 0px;
+          background: #FCFCFC;
+          color: #848484;
+          border: 0px;
+          outline: none;
+          -webkit-box-shadow: none !important;
+          -moz-box-shadow: none !important;
+          box-shadow: none !important;
+          padding: 0px; }
+          .dashboard .menu-bar .profile-box .btn-group button .profile-pic {
+            float: left; }
+            .dashboard .menu-bar .profile-box .btn-group button .profile-pic img {
+              width: 30px; }
+          .dashboard .menu-bar .profile-box .btn-group button .username {
+            float: left;
+            height: 30px;
+            padding: 5px;
+            width: 74px; }
+        .dashboard .menu-bar .profile-box .btn-group button:hover {
+          z-index: 0; }
         .dashboard .menu-bar .profile-box .btn-group .dropdown-toggle {
-          width: 26px; }
+          width: 26px;
+          border-left: #D7D7D7 solid 1px;
+          -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125); }
         .dashboard .menu-bar .profile-box .btn-group .dropdown-menu {
-          left: -125px; }
+          left: -36px;
+          top: 62px;
+          border-radius: 0px; }
+          .dashboard .menu-bar .profile-box .btn-group .dropdown-menu li {
+            width: 100%;
+            height: 30px; }
+            .dashboard .menu-bar .profile-box .btn-group .dropdown-menu li a {
+              font-family: 'Open Sans',sans-serif;
+              color: #000000;
+              font-size: 14px;
+              display: block;
+              width: 100%;
+              height: 100%; }
+          .dashboard .menu-bar .profile-box .btn-group .dropdown-menu .divider {
+            width: 100%;
+            height: 1px;
+            margin: 2px; }

@@ -23,34 +23,20 @@
 			float: left;
 
 			img {
-				width: 65px;
+				width: 80px;
 				padding: 7px;
-			}
-
-			@media screen and (max-width: 977px) {
-		    	.logo {
-		    		width: 60px;
-		    	}
-
-		    	img {
-		    		width: 50px;
-					padding: 6px;
-					margin-top: 8px;
-		    	}
-		    }
+			}		
     	}
 
     	.title {
     		font-size: 29px;
 			font-family: PT Sans Caption;
-			padding: 20px;
 			float: left;
 
-			@media screen and (max-width: 977px) {
-	    		.title {
-	    			display: none;
-	    		}
-		    }
+			img {
+				width: 156px;
+				padding: 11px;
+			}			
     	}
     }
 
@@ -204,18 +190,17 @@
     }
 
 
-    @media screen and (max-width: 977px) {
-    	// width: 60px;
-    	.logo-wrapper {
-    		.title {
-    			display: none;
-    		}
+    // @media screen and (max-width: 977px) {
+    // 	.logo-wrapper {
+    // 		.title {
+    // 			display: none;
+    // 		}
 
-	    	.logo {
-	    		width: 60px;
-	    	}
-	    }
-    }
+	   //  	.logo {
+	   //  		width: 60px;
+	   //  	}
+	   //  }
+    // }
 
     @media screen and (max-width: 768px) {
     	display: none;
