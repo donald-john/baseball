@@ -22,15 +22,15 @@
 		<script type="text/javascript" src="js/controllers/dashboardController.js"></script>
 		<script type="text/javascript" src="js/directives/dashboardDirectives.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
-		<!-- <base href="/baseball/"> -->
-		<base href="/">
+		<base href="/baseball/">
+		<!-- <base href="/"> -->
 	</head>
 	<body ng-app="baseball">
 		<div class="main-container" ng-controller="AppController">
 			<div class="dashboard-wrapper" ng-controller="DashboardController">
-				<div ng-include="'partials/sidetray.html'"></div>
+				<div ng-include="'/partials/sidetray.html'"></div>
 				<div class="dashboard">
-					<div ng-include="'partials/header.html'"></div>
+					<div ng-include="'/partials/header.html'"></div>
 					<div ng-view></div>
 				</div>
 			</div>
