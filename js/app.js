@@ -4,6 +4,10 @@ angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRou
 			when('/', {
 				templateUrl: 'partials/main.html',
 				controller: 'DashboardController'
+			}).
+			when('/playerdiagnostics', {
+				templateUrl: 'partials/playerDiagnostics.html',
+				controller: 'DashboardController'
 			});
 
 		$locationProvider.html5Mode(true);

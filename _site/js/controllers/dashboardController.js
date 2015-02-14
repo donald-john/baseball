@@ -1,4 +1,6 @@
 controllers.controller('DashboardController', ['$scope', function($scope){
+	
+	$scope.sidebarCollapsed = false;
 	$scope.navigation = [
 		{
 			type: 'category',
@@ -6,18 +8,22 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 			options: [
 				{
 					title: 'Player Diagnostics',
-					href: '#'
+					href: '/playerdiagnostics',
+					id: 1
 				},
 				{
 					title: 'Team Diagnostics',
-					href: '#'
+					href: '#',
+					id: 2
 				},
 				{
 					title: 'League Diagnostics',
-					href: '#'
+					href: '#',
+					id: 3
 				}
 			],
-			open: true
+			open: true,
+			selected: true
 		},
 		{
 			type: 'category',
@@ -25,18 +31,22 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 			options: [
 				{
 					title: 'Fan Support',
-					href: '#'
+					href: '#',
+					id: 4
 				},
 				{
 					title: 'Media Coverage',
-					href: '#'
+					href: '#',
+					id: 5
 				},
 				{
 					title: 'Salaries',
-					href: '#'
+					href: '#',
+					id: 6
 				}
 			],
-			open: false
+			open: true,
+			selected: false
 		},
 		{
 			type: 'category',
@@ -44,26 +54,56 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 			options: [
 				{
 					title: 'Team Schedule',
-					href: '#'
+					href: '#',
+					id: 7
 				},
 				{
 					title: 'Stadium Availability',
-					href: '#'
+					href: '#',
+					id: 8
 				},
 				{
 					title: 'Events',
-					href: '#'
+					href: '#',
+					id: 9
 				}
 			],
-			open: false
+			open: true,
+			selected: false
 		},
 		{
 			type: 'option',
 			title: '',
-			href: '#'
+			href: '#',
+			id: 10
 		}
 	];
 
-	$scope.sidebarCollapsed = false;
+	$scope.toggleSidebarCollapsed = function(){
+		$scope.sidebarCollapsed = !$scope.sidebarCollapsed;
+		if($scope.sidebarCollapsed){
+			for (var i = 0; i < $scope.navigation.length; i++) {
+				if($scope.navigation[i].type == 'category'){
+					$scope.navigation[i].open = false;
+				}
+			};
+		}
+	}
+
+	$scope.adjustSelection = function(category, option){
+		for (var i = 0; i < $scope.navigation.length; i++) {
+			if($scope.navigation[i].type == 'category'){
+				$scope.navigation[i].selected = false;
+				for (var j = 0; j < $scope.navigation[i].options.length; j++) {
+					$scope.navigation[i].options[j].selected = false;
+				};
+			}
+		};
+		category.selected = true;
+		option.selected = true;
+	}
+	
+
+	
 
 }]);

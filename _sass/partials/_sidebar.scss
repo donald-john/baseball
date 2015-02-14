@@ -15,6 +15,7 @@
     	font-family: Open Sans;
     	background: #424242;
 		z-index: 1;
+		height: 80px;
 
     	.logo{
     		height: 80px;
@@ -60,17 +61,56 @@
 		width: $sidetray-width;
 		overflow-y: scroll;
 
+		.search {
+			margin-top: 80;
+			height: 46px;
+			input {
+				width: 100%;
+				height: 100%;
+				background: #CA9842;
+				color: #ffffff;
+				font-size: 19px;
+				padding: 17px;
+				padding-right: 52px;
+
+				// pesky bootstrap input glow
+				outline: none;
+				border: none !important;
+				-webkit-box-shadow: none !important;
+				-moz-box-shadow: none !important;
+				box-shadow: none !important;
+				
+			}
+			i {
+				position: absolute;
+				top: 80px;
+				right: 0px;
+				font-size: 26px;
+				padding: 10px;
+				padding-right: 5px;
+				color: #ffffff;
+				margin-right: 10px;
+			}
+			
+		}
+
 		.menu {
-			margin-top: 80px;
 	    	.menu-section {
 	    		width: 100%;
 	    		.section-wrapper {
 	    			padding-left: 10px;
-	    			background: #3A3A3A;
+	    			background: #343434;
 	    			height: 46px;
 	    			a {
 	    				text-decoration: none;
-	    				color: #ffffff;
+	    				color: #A0A0A0;
+	    			}
+
+	    			.selected {
+	    				color: white;
+	    				.section-icon{
+	    					color:orange;
+	    				}
 	    			}
 
 	    			.section-icon {
@@ -106,24 +146,31 @@
 						}
 					}
 
-					a:hover{
-						background: #3A3A3A;
+					.selected {
+						background: #202020;
+						color: #CA9842;
 					}
+
+					a:hover{
+						background: #202020;
+					}
+
+
 		    	}
 		    	ul {
-					max-height: 0;
+					max-height: 1;
 					overflow: hidden;
-		    		-moz-transition: max-height 1s ease;
-				    -webkit-transition: max-height 1s ease;
-				    -o-transition: max-height 1s ease;
-				    transition: max-height 1s ease;
+		    		-moz-transition: max-height .6s ease;
+				    -webkit-transition: max-height .6s ease;
+				    -o-transition: max-height .6s ease;
+				    transition: max-height .6s ease;
 				}
 	    	}
 
 	    	// menu items open/close 
 	    	.expanded ul{
 			    max-height: 100px;
-				transition: max-height 1s ease;
+				transition: max-height .6s ease;
 				overflow: hidden;		    	
 		    }
 	    }

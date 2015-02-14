@@ -8,10 +8,15 @@
 		</div>
 	</div>
 	<div class="menu-wrapper">
-		<ul class="menu" ng-class="{'collapsed':sidebarCollapsed}">
+		<div class="search">
+			<input type="text" placeholder="search">
+			<i class="ti-search"></i>
+		</i>
+		</div>
+		<ul class="menu" ng-class="{'collapsed':sidebarCollapsed == true}">
 			<li ng-repeat="category in navigation" ng-if="category.type == 'category'" class="menu-section" ng-class="{'expanded':category.open}">
 				<div class="section-wrapper" toggle-click>
-					<a ng-click="category.open = !category.open" href="#">
+					<a ng-click="category.open = !category.open" ng-href="#" ng-class="{'selected':category.selected}">
 						<div class="section-icon">
 							<i class="ti-dashboard"></i>
 						</div>
@@ -23,7 +28,7 @@
 				
 				<ul>
 					<li ng-repeat="option in category.options" class="menu-option">
-						<a hreaf="option.href">
+						<a ng-href="{{option.href}}" ng-click="adjustSelection(category, option)" ng-class="{'selected':option.selected}">
 							<h4>
 								{{option.title}}
 							</h4>
@@ -31,107 +36,6 @@
 					</li>
 				</ul>
 			</li>
-			<!-- <li class="menu-section">
-				<div class="section-wrapper">
-					<div class="section-icon">
-						<i class="ti-dashboard"></i>
-					</div>
-					<div class="section-title">
-						<h3 class="title">Menu Category</h3>
-					</div>
-				</div>
-				
-				<ul>
-					<li class="menu-option">
-						<a hreaf="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-					<li class="menu-option">
-						<a href="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-					<li class="menu-option">
-						<a href="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-section">
-				<div class="section-wrapper">
-					<div class="section-icon">
-						<i class="ti-bar-chart-alt"></i>
-					</div>
-					<div class="section-title">
-						<h3 class="title">Menu Category</h3>
-					</div>
-				</div>
-				<ul>
-					<li class="menu-option">
-						<a hreaf="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-					<li class="menu-option">
-						<a href="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-					<li class="menu-option">
-						<a href="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-section">
-				<div class="section-wrapper">
-					<div class="section-icon">
-						<i class="ti-calendar"></i>
-					</div>
-					<div class="section-title">
-						<h3 class="title">Menu Category</h3>
-					</div>
-				</div>
-				<ul>
-					<li class="menu-option">
-						<a hreaf="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-					<li class="menu-option">
-						<a href="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-					<li class="menu-option">
-						<a href="#">
-							<h4>
-								Menu Selection
-							</h4>
-						</a>
-					</li>
-				</ul>
-			</li> -->
-			
 		</ul>	
 	</div>
 </div>
