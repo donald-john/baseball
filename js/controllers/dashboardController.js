@@ -5,6 +5,7 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 		{
 			type: 'category',
 			title: 'Dashboard',
+			icon: 'ti-dashboard',
 			options: [
 				{
 					title: 'Player Diagnostics',
@@ -13,12 +14,12 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 				},
 				{
 					title: 'Team Diagnostics',
-					href: '#',
+					href: '/teamdiagnostics',
 					id: 2
 				},
 				{
 					title: 'League Diagnostics',
-					href: '#',
+					href: '/leaguediagnostics',
 					id: 3
 				}
 			],
@@ -28,20 +29,21 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 		{
 			type: 'category',
 			title: 'Statistics',
+			icon: 'ti-bar-chart-alt',
 			options: [
 				{
 					title: 'Fan Support',
-					href: '#',
+					href: '/fans',
 					id: 4
 				},
 				{
 					title: 'Media Coverage',
-					href: '#',
+					href: '/media',
 					id: 5
 				},
 				{
 					title: 'Salaries',
-					href: '#',
+					href: '/salaries',
 					id: 6
 				}
 			],
@@ -51,20 +53,21 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 		{
 			type: 'category',
 			title: 'Schedules',
+			icon: 'ti-calendar',
 			options: [
 				{
 					title: 'Team Schedule',
-					href: '#',
+					href: '/teamschedule',
 					id: 7
 				},
 				{
 					title: 'Stadium Availability',
-					href: '#',
+					href: '/stadiums',
 					id: 8
 				},
 				{
 					title: 'Events',
-					href: '#',
+					href: '/events',
 					id: 9
 				}
 			],
