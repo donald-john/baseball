@@ -1,4 +1,4 @@
-angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRoute'])
+angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRoute','ui.bootstrap'])
 	.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){
 		$routeProvider.
 			when('/', {
