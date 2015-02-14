@@ -8,8 +8,30 @@
 		</div>
 	</div>
 	<div class="menu-wrapper">
-		<ul class="menu">
-			<li class="menu-section">
+		<ul class="menu" ng-class="{'collapsed':sidebarCollapsed}">
+			<li ng-repeat="category in navigation" ng-if="category.type == 'category'" class="menu-section" ng-class="{'expanded':category.open}">
+				<div class="section-wrapper" toggle-click>
+					<a ng-click="category.open = !category.open" href="#">
+						<div class="section-icon">
+							<i class="ti-dashboard"></i>
+						</div>
+						<div class="section-title">
+							<h3 class="title">{{category.title}}</h3>
+						</div>
+					</a>
+				</div>
+				
+				<ul>
+					<li ng-repeat="option in category.options" class="menu-option">
+						<a hreaf="option.href">
+							<h4>
+								{{option.title}}
+							</h4>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- <li class="menu-section">
 				<div class="section-wrapper">
 					<div class="section-icon">
 						<i class="ti-dashboard"></i>
@@ -108,7 +130,7 @@
 						</a>
 					</li>
 				</ul>
-			</li>
+			</li> -->
 			
 		</ul>	
 	</div>

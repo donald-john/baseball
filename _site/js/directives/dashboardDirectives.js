@@ -8,6 +8,7 @@ directives.directive('menuTransform', ['$rootScope', function($rootScope){
 				if(width == 60){
 					$('.title').hide();
 					$('.logo').width(60)
+					$('.logo-wrapper').width(60)
 					$('.logo img').width(50);
 					$('.logo img').css('padding','6px');
 					$('.logo img').css('margin-top','8px');
