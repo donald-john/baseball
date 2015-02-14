@@ -1,6 +1,20 @@
 // _home.scss
 
 .home-container {
-	padding: 20px;
 	font-family: Open Sans;
+
+	.header {
+		padding: 20px;
+	}
+
+	.lightbg {
+		background: #ffffff;
+		border-top: #CDCDCD solid 1px;
+		border-bottom: #CDCDCD solid 1px;
+	}
+
+	.smallbg {
+		height: 200px;
+
+	}
 }

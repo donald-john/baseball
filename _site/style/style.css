@@ -177,8 +177,15 @@ table {
       display: none; } }
 
 .home-container {
-  padding: 20px;
   font-family: Open Sans; }
+  .home-container .header {
+    padding: 20px; }
+  .home-container .lightbg {
+    background: #ffffff;
+    border-top: #CDCDCD solid 1px;
+    border-bottom: #CDCDCD solid 1px; }
+  .home-container .smallbg {
+    height: 200px; }
 
 body {
   font-family: 'Open Sans',sans-serif;
@@ -199,7 +206,7 @@ body {
     top: 0px;
     height: 80px;
     background: #FCFCFC;
-    border-bottom: #949494 solid 1px;
+    border-bottom: #CDCDCD solid 1px;
     padding: 15px; }
     .dashboard .menu-bar .header-button {
       display: block;
