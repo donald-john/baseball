@@ -1,5 +1,6 @@
-controllers.controller('DashboardController', ['$scope', function($scope){
-	
+controllers.controller('DashboardController', ['$scope', '$rootScope', function($scope, $rootScope){
+	var baseUrl = $('base').attr('href');
+	$scope.base = baseUrl;
 	$scope.sidebarCollapsed = false;
 	$scope.navigation = [
 		{
@@ -9,17 +10,17 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 			options: [
 				{
 					title: 'Player Diagnostics',
-					href: '/playerdiagnostics',
+					href: baseUrl + 'playerdiagnostics',
 					id: 1
 				},
 				{
 					title: 'Team Diagnostics',
-					href: '/teamdiagnostics',
+					href: baseUrl + 'teamdiagnostics',
 					id: 2
 				},
 				{
 					title: 'League Diagnostics',
-					href: '/leaguediagnostics',
+					href: baseUrl + 'leaguediagnostics',
 					id: 3
 				}
 			],
@@ -33,17 +34,17 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 			options: [
 				{
 					title: 'Fan Support',
-					href: '/fans',
+					href: baseUrl + 'fans',
 					id: 4
 				},
 				{
 					title: 'Media Coverage',
-					href: '/media',
+					href: baseUrl + 'media',
 					id: 5
 				},
 				{
 					title: 'Salaries',
-					href: '/salaries',
+					href: baseUrl + 'salaries',
 					id: 6
 				}
 			],
@@ -57,17 +58,17 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 			options: [
 				{
 					title: 'Team Schedule',
-					href: '/teamschedule',
+					href: baseUrl + 'teamschedule',
 					id: 7
 				},
 				{
 					title: 'Stadium Availability',
-					href: '/stadiums',
+					href: baseUrl + 'stadiums',
 					id: 8
 				},
 				{
 					title: 'Events',
-					href: '/events',
+					href: baseUrl + 'events',
 					id: 9
 				}
 			],
@@ -77,7 +78,7 @@ controllers.controller('DashboardController', ['$scope', function($scope){
 		{
 			type: 'option',
 			title: '',
-			href: '#',
+			href: baseUrl + '#',
 			id: 10
 		}
 	];

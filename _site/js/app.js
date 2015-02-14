@@ -1,44 +1,45 @@
 angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRoute','ui.bootstrap'])
 	.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){
+		var baseUrl = $('base').attr('href');  // setting base doesn't seem to effect partial paths so...
 		$routeProvider.
 			when('/', {
-				templateUrl: 'partials/main.html',
+				templateUrl: baseUrl + 'partials/main.html',
 				controller: 'DashboardController'
 			}).
 			when('/playerdiagnostics', {
-				templateUrl: 'partials/playerDiagnostics.html',
+				templateUrl: baseUrl + 'partials/playerDiagnostics.html',
 				controller: 'DashboardController'
 			}).
 			when('/teamdiagnostics', {
-				templateUrl: 'partials/teamDiagnostics.html',
+				templateUrl: baseUrl + 'partials/teamDiagnostics.html',
 				controller: 'DashboardController'
 			}).
 			when('/leaguediagnostics', {
-				templateUrl: 'partials/leagueDiagnostics.html',
+				templateUrl: baseUrl + 'partials/leagueDiagnostics.html',
 				controller: 'DashboardController'
 			}).
 			when('/fans', {
-				templateUrl: 'partials/fanSupport.html',
+				templateUrl: baseUrl + 'partials/fanSupport.html',
 				controller: 'DashboardController'
 			}).
 			when('/media', {
-				templateUrl: 'partials/mediaCoverage.html',
+				templateUrl: baseUrl + 'partials/mediaCoverage.html',
 				controller: 'DashboardController'
 			}).
 			when('/salaries', {
-				templateUrl: 'partials/salaries.html',
+				templateUrl: baseUrl + 'partials/salaries.html',
 				controller: 'DashboardController'
 			}).
 			when('/teamschedule', {
-				templateUrl: 'partials/teamSchedule.html',
+				templateUrl: baseUrl + 'partials/teamSchedule.html',
 				controller: 'DashboardController'
 			}).
 			when('/stadiums', {
-				templateUrl: 'partials/stadiumAvailability.html',
+				templateUrl: baseUrl + 'partials/stadiumAvailability.html',
 				controller: 'DashboardController'
 			}).
 			when('/events', {
-				templateUrl: 'partials/events.html',
+				templateUrl: baseUrl + 'partials/events.html',
 				controller: 'DashboardController'
 			});
 
