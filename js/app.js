@@ -1,6 +1,7 @@
 angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRoute','ui.bootstrap'])
 	.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){
 		var baseUrl = $('base').attr('href');  // setting base doesn't seem to effect partial paths so...
+		$routeProvider.otherwise('/');
 		$routeProvider.
 			when('/', {
 				templateUrl: baseUrl + 'partials/main.html',
@@ -43,5 +44,5 @@ angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRou
 				controller: 'DashboardController'
 			});
 
-		$locationProvider.html5Mode(true);
+		// $locationProvider.html5Mode(true);
 	}]);
