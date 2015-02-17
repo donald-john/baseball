@@ -19,7 +19,7 @@ controllers.controller('DashboardController', ['$scope', '$rootScope', '$route',
 		};
 	});
 
-	var baseUrl = $('base').attr('href');
+	var baseUrl = ""; //$('base').attr('href');
 	$scope.base = baseUrl;
 	$scope.sidebarCollapsed = false;
 	$scope.navigation = [
@@ -30,7 +30,7 @@ controllers.controller('DashboardController', ['$scope', '$rootScope', '$route',
 			options: [
 				{
 					title: 'Overview',
-					href: baseUrl + '',
+					href: baseUrl + '/',
 					id: 0
 				},
 				{
