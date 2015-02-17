@@ -7,15 +7,15 @@ angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRou
 				templateUrl: baseUrl + 'partials/main.html',
 				controller: 'DashboardController'
 			}).
-			when('/playerdiagnostics', {
+			when('/players', {
 				templateUrl: baseUrl + 'partials/playerDiagnostics.html',
 				controller: 'DashboardController'
 			}).
-			when('/teamdiagnostics', {
+			when('/teams', {
 				templateUrl: baseUrl + 'partials/teamDiagnostics.html',
 				controller: 'DashboardController'
 			}).
-			when('/leaguediagnostics', {
+			when('/league', {
 				templateUrl: baseUrl + 'partials/leagueDiagnostics.html',
 				controller: 'DashboardController'
 			}).
@@ -31,7 +31,7 @@ angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRou
 				templateUrl: baseUrl + 'partials/salaries.html',
 				controller: 'DashboardController'
 			}).
-			when('/teamschedule', {
+			when('/schedule', {
 				templateUrl: baseUrl + 'partials/teamSchedule.html',
 				controller: 'DashboardController'
 			}).

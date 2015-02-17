@@ -1,20 +1,21 @@
 angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRoute','ui.bootstrap'])
 	.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){
 		var baseUrl = $('base').attr('href');  // setting base doesn't seem to effect partial paths so...
+		$routeProvider.otherwise('/');
 		$routeProvider.
 			when('/', {
 				templateUrl: baseUrl + 'partials/main.html',
 				controller: 'DashboardController'
 			}).
-			when('/playerdiagnostics', {
+			when('/players', {
 				templateUrl: baseUrl + 'partials/playerDiagnostics.html',
 				controller: 'DashboardController'
 			}).
-			when('/teamdiagnostics', {
+			when('/teams', {
 				templateUrl: baseUrl + 'partials/teamDiagnostics.html',
 				controller: 'DashboardController'
 			}).
-			when('/leaguediagnostics', {
+			when('/league', {
 				templateUrl: baseUrl + 'partials/leagueDiagnostics.html',
 				controller: 'DashboardController'
 			}).
@@ -30,7 +31,7 @@ angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRou
 				templateUrl: baseUrl + 'partials/salaries.html',
 				controller: 'DashboardController'
 			}).
-			when('/teamschedule', {
+			when('/schedule', {
 				templateUrl: baseUrl + 'partials/teamSchedule.html',
 				controller: 'DashboardController'
 			}).
@@ -43,5 +44,5 @@ angular.module('baseball', ['baseball.controllers', 'baseball.directives','ngRou
 				controller: 'DashboardController'
 			});
 
-		$locationProvider.html5Mode(true);
+		// $locationProvider.html5Mode(true);
 	}]);

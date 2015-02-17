@@ -1,11 +1,13 @@
 <div class="sidetray">
 	<div class="logo-wrapper">
-		<div class="logo">
-			<img src="img/baseball-logo.png">
-		</div>
-		<div class="title">
-			<img src="img/title.png">
-		</div>
+		<a ng-href="/#/">
+			<div class="logo">
+				<img src="img/baseball-logo.png">
+			</div>
+			<div class="title">
+				<img src="img/title.png">
+			</div>
+		</a>
 	</div>
 	<div class="menu-wrapper">
 		<div class="search">
@@ -16,7 +18,7 @@
 		<ul class="menu" ng-class="{'collapsed':sidebarCollapsed == true}">
 			<li ng-repeat="category in navigation" ng-if="category.type == 'category'" class="menu-section" ng-class="{'expanded':category.open}">
 				<div class="section-wrapper" toggle-click>
-					<a ng-click="category.open = !category.open" ng-href="#" ng-class="{'selected':category.selected}">
+					<a ng-click="category.open = !category.open" href="javascript:void(0)" ng-class="{'selected':category.selected}">
 						<div class="section-icon">
 							<i class="{{category.icon}}"></i>
 						</div>
@@ -28,7 +30,7 @@
 				
 				<ul>
 					<li ng-repeat="option in category.options" class="menu-option">
-						<a ng-href="{{option.href}}" ng-click="adjustSelection(category, option)" ng-class="{'selected':option.selected}">
+						<a ng-href="{{'#' + option.href}}" ng-class="{'selected':option.selected}">
 							<h4>
 								{{option.title}}
 							</h4>
@@ -37,5 +39,8 @@
 				</ul>
 			</li>
 		</ul>	
+	</div>
+	<div class="brand-wrapper">
+		<img src="img/donaldjohn-dark.png">
 	</div>
 </div>

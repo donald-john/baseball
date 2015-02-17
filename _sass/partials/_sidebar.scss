@@ -7,7 +7,7 @@
     background: $sidetray;
     border-right: #444444 solid 2px;
 
-    .logo-wrapper{
+    .logo-wrapper {
     	display: inline-block;
 		width: 100%;
 		position: absolute;
@@ -16,28 +16,35 @@
     	background: #424242;
 		z-index: 1;
 		height: 80px;
+		z-index: 20;
 
-    	.logo{
-    		height: 80px;
-			width: 80px;
-			float: left;
 
-			img {
+		a {
+			display: block;
+			height: 100%;
+
+			.logo{
+	    		height: 80px;
 				width: 80px;
-				padding: 7px;
-			}		
-    	}
+				float: left;
 
-    	.title {
-    		font-size: 29px;
-			font-family: PT Sans Caption;
-			float: left;
+				img {
+					width: 80px;
+					padding: 7px;
+				}		
+	    	}
 
-			img {
-				width: 156px;
-				padding: 11px;
-			}			
-    	}
+	    	.title {
+	    		font-size: 29px;
+				font-family: PT Sans Caption;
+				float: left;
+
+				img {
+					width: 156px;
+					padding-top: 20px;
+				}			
+	    	}
+		}
     }
 
 
@@ -46,6 +53,7 @@
     	position: absolute;
 		width: $sidetray-width;
 		overflow-y: scroll;
+		z-index: 10;
 
 		.search {
 			margin-top: 80;
@@ -132,7 +140,6 @@
 	    		.menu-option {
 		    		width: 100%;
 					height: 30px;
-					margin: 1px;
 					background: #343434;
 
 					a {
@@ -171,7 +178,7 @@
 
 	    	// menu items open/close 
 	    	.expanded ul{
-			    max-height: 100px;
+			    max-height: 200px;
 				transition: max-height .6s ease;
 				overflow: hidden;		    	
 		    }
@@ -190,17 +197,20 @@
     }
 
 
-    // @media screen and (max-width: 977px) {
-    // 	.logo-wrapper {
-    // 		.title {
-    // 			display: none;
-    // 		}
 
-	   //  	.logo {
-	   //  		width: 60px;
-	   //  	}
-	   //  }
-    // }
+    .brand-wrapper {
+    	position: absolute;
+    	bottom: 0px;
+    	width: 252px;
+
+    	img {
+    		width: 180px;
+    		margin-left: 36px;
+    		margin-right: 36px;
+    		opacity: .4;
+    	}
+    }
+
 
     @media screen and (max-width: 768px) {
     	display: none;

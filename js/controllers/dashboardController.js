@@ -1,4 +1,24 @@
-controllers.controller('DashboardController', ['$scope', '$rootScope', function($scope, $rootScope){
+controllers.controller('DashboardController', ['$scope', '$rootScope', '$route', function($scope, $rootScope, $route){
+	
+	// debugger;
+
+	$rootScope.$on('$routeChangeStart', function(event, next, current){
+		
+		// menu highlighting
+		for (var i = 0; i < $scope.navigation.length; i++) {
+			if($scope.navigation[i].type == 'category'){
+				$scope.navigation[i].selected = false;
+				for (var j = 0; j < $scope.navigation[i].options.length; j++) {
+					$scope.navigation[i].options[j].selected = false;
+					if($scope.navigation[i].options[j].href == next.$$route.originalPath){
+						$scope.navigation[i].selected = true;
+						$scope.navigation[i].options[j].selected = true;
+					}
+				};
+			}
+		};
+	});
+
 	var baseUrl = $('base').attr('href');
 	$scope.base = baseUrl;
 	$scope.sidebarCollapsed = false;
@@ -9,18 +29,23 @@ controllers.controller('DashboardController', ['$scope', '$rootScope', function(
 			icon: 'ti-dashboard',
 			options: [
 				{
+					title: 'Overview',
+					href: baseUrl + '',
+					id: 0
+				},
+				{
 					title: 'Player Diagnostics',
-					href: baseUrl + 'playerdiagnostics',
+					href: baseUrl + 'players',
 					id: 1
 				},
 				{
 					title: 'Team Diagnostics',
-					href: baseUrl + 'teamdiagnostics',
+					href: baseUrl + 'teams',
 					id: 2
 				},
 				{
 					title: 'League Diagnostics',
-					href: baseUrl + 'leaguediagnostics',
+					href: baseUrl + 'league',
 					id: 3
 				}
 			],
@@ -58,7 +83,7 @@ controllers.controller('DashboardController', ['$scope', '$rootScope', function(
 			options: [
 				{
 					title: 'Team Schedule',
-					href: baseUrl + 'teamschedule',
+					href: baseUrl + 'schedule',
 					id: 7
 				},
 				{
@@ -93,21 +118,6 @@ controllers.controller('DashboardController', ['$scope', '$rootScope', function(
 			};
 		}
 	}
-
-	$scope.adjustSelection = function(category, option){
-		for (var i = 0; i < $scope.navigation.length; i++) {
-			if($scope.navigation[i].type == 'category'){
-				$scope.navigation[i].selected = false;
-				for (var j = 0; j < $scope.navigation[i].options.length; j++) {
-					$scope.navigation[i].options[j].selected = false;
-				};
-			}
-		};
-		category.selected = true;
-		option.selected = true;
-	}
-	
-
 	
 
 }]);
