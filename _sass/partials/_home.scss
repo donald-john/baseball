@@ -9,13 +9,19 @@
 
 	.lightbg {
 		background: #ffffff;
-		border-top: #CDCDCD solid 1px;
-		border-bottom: #CDCDCD solid 1px;
+		border: #CDCDCD solid 1px;
 	}
 
 	.smallbg {
 		height: 200px;
+		margin-right: 20px;
+		margin-left: 20px;
+
 		overflow: scroll;
+
+		@media screen and (max-width: 768px) {
+			height: 350px;
+		}
 	}
 
 	.recent-league-games {
@@ -31,5 +37,27 @@
 			background: green;
 			margin-left: 10px;
 		}
+	}
+
+
+	.double-pane {
+		height: 350px;
+		// margin-top: 20px;
+		// margin-bottom: 20px;
+		margin-left: 5px;
+		margin-right: 5px;
+
+		.double {
+			height: 350px;
+			padding-top: 20px;
+
+			.double-content {
+				background: #ffffff;
+				border: #CDCDCD solid 1px;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
 	}
 }

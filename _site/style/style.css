@@ -153,9 +153,10 @@ table {
           height: 100%;
           width: 100%;
           display: block;
-          padding: 6px; }
+          padding: 8px; }
           .sidetray .menu-wrapper .menu .menu-section .menu-option a h4 {
-            margin-left: 55px; }
+            margin-left: 55px;
+            font-size: 11px; }
         .sidetray .menu-wrapper .menu .menu-section .menu-option .selected {
           background: #202020;
           color: #CA9842; }
@@ -185,6 +186,10 @@ table {
       margin-left: 36px;
       margin-right: 36px;
       opacity: .4; }
+    .sidetray .brand-wrapper .small-blogo {
+      margin: 0px;
+      width: 62px;
+      padding: 6px; }
   @media screen and (max-width: 768px) {
     .sidetray {
       display: none; } }
@@ -195,11 +200,15 @@ table {
     padding: 20px; }
   .home-container .lightbg {
     background: #ffffff;
-    border-top: #CDCDCD solid 1px;
-    border-bottom: #CDCDCD solid 1px; }
+    border: #CDCDCD solid 1px; }
   .home-container .smallbg {
     height: 200px;
+    margin-right: 20px;
+    margin-left: 20px;
     overflow: scroll; }
+    @media screen and (max-width: 768px) {
+      .home-container .smallbg {
+        height: 350px; } }
   .home-container .recent-league-games {
     height: 100%;
     width: 100%;
@@ -211,6 +220,18 @@ table {
       width: 22%;
       background: green;
       margin-left: 10px; }
+  .home-container .double-pane {
+    height: 350px;
+    margin-left: 5px;
+    margin-right: 5px; }
+    .home-container .double-pane .double {
+      height: 350px;
+      padding-top: 20px; }
+      .home-container .double-pane .double .double-content {
+        background: #ffffff;
+        border: #CDCDCD solid 1px;
+        width: 100%;
+        height: 100%; }
 
 body {
   font-family: 'Open Sans',sans-serif;

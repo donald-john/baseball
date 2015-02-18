@@ -148,10 +148,11 @@
 						height: 100%;
 						width: 100%;
 						display: block;
-						padding: 6px;
+						padding: 8px;
 
 						h4 {
 							margin-left: 55px;
+							font-size: 11px;
 						}
 					}
 
@@ -208,6 +209,12 @@
     		margin-left: 36px;
     		margin-right: 36px;
     		opacity: .4;
+    	}
+
+    	.small-blogo {
+    		margin: 0px;
+    		width: 62px;
+    		padding: 6px;
     	}
     }
 

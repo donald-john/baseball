@@ -12,6 +12,10 @@ directives.directive('menuTransform', ['$rootScope', function($rootScope){
 				$('.logo img').width(50);
 				$('.logo img').css('padding','6px');
 				$('.logo img').css('margin-top','8px');
+
+				// switch to small brand logo
+				$('.brand-wrapper .large-blogo').hide();
+				$('.brand-wrapper .small-blogo').show();
 			}else {
 				$('.title').show();
 				$('.logo').width(80)
@@ -20,6 +24,10 @@ directives.directive('menuTransform', ['$rootScope', function($rootScope){
 				$('.logo img').width(65);
 				$('.logo img').css('padding','7px');
 				$('.logo img').css('margin-top','0px');
+
+				// switch to large brand logo
+				$('.brand-wrapper .large-blogo').show();
+				$('.brand-wrapper .small-blogo').hide();
 			}
 		});
 	}
