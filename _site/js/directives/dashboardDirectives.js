@@ -1,5 +1,5 @@
 var directives = angular.module('baseball.directives', []);
-directives.directive('menuTransform', ['$rootScope', function($rootScope){
+directives.directive('menuTransform', [function(){
 	return function(scope, element, attrs){
 		element.bind('click', function(){
 			var width = $('.sidetray').width() == 60 ? 250 : 60;
@@ -30,5 +30,27 @@ directives.directive('menuTransform', ['$rootScope', function($rootScope){
 				$('.brand-wrapper .small-blogo').hide();
 			}
 		});
+	}
+}]).directive('chartjs',[function(){
+	return function(scope, element, attrs){
+
+		var data = jQuery.parseJSON(attrs.object);
+		var type = attrs.type;
+		var options = (attrs.options == "") ? {} : jQuery.parseJSON(attrs.options);
+		var id = attrs.id;
+		var chart;
+		switch(type){
+			case "polar-area":
+				chart = new Chart(element[0].getContext("2d")).PolarArea(data, options);
+				break;
+			case "doughnut":
+				chart = new Chart(element[0].getContext("2d")).Doughnut(data, options);
+				break;
+			default:
+				throw "Need to specify chart type";
+				break;
+		}
+		// scope.charts.push({id: id, chart: chart});
+		// use broadcast instead
 	}
 }]);
